@@ -57,6 +57,41 @@
 
       const angela = new Person('Angela');
       angela.saludar();
+
+      function saludar() {
+        console.log(`Hola, me llamo ${this.name} ${this.apellido}`);
+      }
+      const augusto = {
+          name: 'Augusto',
+          apellido: 'Barco'
+      }
+
+      saludar.call(augusto);
+
+      function caminar(metros, direccion) {
+        console.log(
+          `${this.name} ${this.apellido} caminó ${metros} hacia el ${direccion}`
+        );
+      }
+      caminar.call(augusto, 1000, "sur");
+
+      caminar.apply(augusto, [800, "sureste"]);
+
+      const params = [800, "sureste"];
+      caminar.apply(augusto, params);
+
+      const daniel = {
+        name: "Daniel",
+        apellido: "Sánchez"
+      };
+      saludar.bind(daniel);
+
+      const saludarConDaniel = saludar.bind(daniel); 
+      saludarConDaniel();
+
+      const danielCamina = caminar.bind(daniel);
+      danielCamina(200, "oeste");
+
     </script>
   </body>
 </html>

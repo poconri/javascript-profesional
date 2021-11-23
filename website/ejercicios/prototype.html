@@ -114,21 +114,21 @@
       // link.saludar();
 
       // new es un atajo (azucar sintactica) para llevar Hero.prototype al objeto que estamos creando
-      function Hero(name) {
-        // this = Object.create(Hero.prototype);
-        this.name = name;
-        // return this;
-      }
+      // function Hero(name) {
+      //   // this = Object.create(Hero.prototype);
+      //   this.name = name;
+      //   // return this;
+      // }
 
-      Hero.prototype.saludar = function() {
-        console.log(`New: ${this.name}`);
-      };
+      // Hero.prototype.saludar = function() {
+      //   console.log(`New: ${this.name}`);
+      // };
 
-      const zelda = new Hero('Zelda');
-      zelda.saludar();
+      // const zelda = new Hero('Zelda');
+      // zelda.saludar();
 
-      const link = new Hero('Link');
-      link.saludar();
+      // const link = new Hero('Link');
+      // link.saludar();
     </script>
   </body>
 </html>

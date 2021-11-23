@@ -40,18 +40,8 @@
       }
 
       async function getTopMoviesIds(n = 3) {
-        // return getPopularMovies().then(popularMovies =>
-        //   popularMovies.slice(0, n).map(movie => movie.id)
-        // );
-        // try {
-        //   const popularMovies = await getPopularMovies();
-        // } catch (error) {
-        //   console.log(error.message)
-        // }
-
-        const popularMovies = await getPopularMovies();
-        const ids = popularMovies.slice(0, n).map(movie => movie.id);
-        return ids;
+        const movies = await getPopularMovies();
+        return movies.slice(0, n).map(movie => movie.id);
       }
 
       function renderMovies(movies) {
@@ -71,15 +61,15 @@
       }
 
       async function getTopMoviesInSequence() {
-        const ids = await getTopMoviesIds();
-        const movies = [];
+        const ids = await getTopMoviesIds()
+        const movies = []
 
-        for (const id of ids) {
-          const movie = await getMovie(id);
-          movies.push(movie);
+        for ( const id of ids) {
+          const movie = await getMovie(id)
+          movies.push(movie)
         }
-
         return movies;
+
       }
 
       async function getTopMoviesInParallel() {
