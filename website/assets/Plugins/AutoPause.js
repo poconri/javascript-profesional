@@ -16,13 +16,10 @@ class AutoPause {
    const isVisible = entry.intersectionRatio >= this.threshold;
    
    if (!!isVisible) {
-    console.log('visible');
     this.player.media.play();
     } else {
-    console.log('not visible');
     this.player.media.pause();
   }
-  console.log(isVisible);
  }
 }
 
